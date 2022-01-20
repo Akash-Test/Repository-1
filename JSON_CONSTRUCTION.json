@@ -1,5 +1,5 @@
 {
-  "chats": {
+  "Chats": {
     "apis": [
       {
         "name": "Retrieve all direct chats",
