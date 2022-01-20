@@ -1,0 +1,573 @@
+{
+  "chats": {
+    "apis": [
+      {
+        "name": "Retrieve all direct chats",
+        "description": "You can use this API to get details of all direct chats",
+        "url": "https://cliq.zoho.com/api/v2/chats",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Chats.READ",
+        "query_params": [
+          {
+            "limit": {
+              "mandatory": "false",
+              "type": "integer",
+              "max_value": "100"
+            }
+          },
+          {
+            "modified_before": {
+              "mandatory": "false",
+              "type": "timestamp"
+            }
+          },
+          {
+            "modified_after": {
+              "mandatory": "false",
+              "type": "timestamp"
+            }
+          },
+          {
+            "drafts": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Retrieve the members of a chat",
+        "description": "You can use this API to get details of members of a chat",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/members",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Chats.READ",
+        "query_params": [
+          {
+            "fields": {
+              "mandatory": "false",
+              "allowed_values": "name | email_id | user_id",
+              "type": "string"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Mute a chat",
+        "description": "You can use this API to mute a chat",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/mute",
+        "http_method": "POST",
+        "oauth_scope": "ZohoCliq.Chats.UPDATE",
+        "body": []
+      },
+      {
+        "name": "Unmute a chat",
+        "description": "You can use this API to unmute a chat",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/unmute",
+        "http_method": "POST",
+        "oauth_scope": "ZohoCliq.Chats.UPDATE",
+        "body": []
+      },
+      {
+        "name": "Pin a message",
+        "description": "You can use this API to pin a message in a conversation",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/stickymessage",
+        "http_method": "POST",
+        "oauth_scope": "ZohoCliq.Chats.CREATE",
+        "body": [
+          {
+            "id": {
+              "mandatory": "true",
+              "type": "string"
+            }
+          },
+          {
+            "expiry_time": {
+              "mandatory": "true",
+              "type": "long"
+            }
+          },
+          {
+            "notify": {
+              "mandatory": "true",
+              "type": "boolean"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Unpin a message",
+        "description": "You can use this API to unpin a message in a conversation",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/stickymessage",
+        "http_method": "DELETE",
+        "oauth_scope": "ZohoCliq.Chats.DELETE"
+      },
+      {
+        "name": "Retrieve a pinned message",
+        "description": "You can use this API to retrieve a pinned message in a conversation",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/stickymessage",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Chats.READ",
+        "query_params": []
+      },
+      {
+        "name": "Leave a group chat",
+        "description": "You can use this API to leave a group chat",
+        "url": "https://cliq.zoho.com/api/v2/chats/{chat_id}/leave",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Chats.UPDATE",
+        "query_params": []
+      }
+    ]
+  },
+  "User": {
+    "apis": [
+      {
+        "name": "Add a user",
+        "description": "You can use this API to add a new user or a list of new users",
+        "url": "https://cliq.zoho.com/api/v2/users",
+        "http_method": "POST",
+        "oauth_scope": "ZohoCliq.Users.CREATE",
+        "body": [
+          {
+            "display_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "first_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "last_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "phone": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "mobile": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "timezone": {
+              "mandatory": "false",
+              "type": "timestamp"
+            }
+          },
+          {
+            "language": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "country": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "designation_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "department_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "reporting_to_zuid": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "work_location": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "extension": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "employee_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "image_data": {
+              "mandatory": "false",
+              "type": "base64"
+            }
+          },
+          {
+            "channel_ids": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          },
+          {
+            "team_ids": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Retrieve a particular user",
+        "description": "You can use this API to get details of a particular user",
+        "url": "https://cliq.zoho.com/api/v2/users/{USER_ID}",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": [
+          {
+            "fields": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"all | display_name | mobile | department | designation"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Retrieve all users",
+        "description": "You can use this API to get details of all the users",
+        "url": "https://cliq.zoho.com/api/v2/users",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": [
+          {
+            "status": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"active | inactive | pending | imported_active | imported_inactive"
+            }
+          },
+          {
+            "plan_type": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"paid | free"
+            }
+          },
+          {
+            "fields": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"all|display_name|mobile|department|designation"
+            }
+          },
+          {
+            "limit": {
+              "mandatory": "false",
+              "type": "integer",
+              "max_value":"500"
+            }
+          },
+          {
+            "search": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "sort_by": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"name | usage"
+            }
+          },
+          {
+            "modified_after": {
+              "mandatory": "false",
+              "type": "timestamp"
+            }
+          },
+          {
+            "next_token": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Update user details",
+        "description": "You can use this API to edit or update a user's details",
+        "url": "https://cliq.zoho.com/api/v2/users/{USER_ID}",
+        "http_method": "PUT",
+        "oauth_scope": "ZohoCliq.Users.UPDATE",
+        "body": [
+          {
+            "display_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "first_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "last_name": {
+              "mandatory": "false",
+              "type": "string"
+            }
+          },
+          {
+            "phone": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "mobile": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "timezone": {
+              "mandatory": "false",
+              "type": "timestamp"
+            }
+          },
+          {
+            "language": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "country": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "designation_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "department_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "reporting_to_zuid": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "work_location": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "extension": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "employee_id": {
+              "mandatory": "false",
+              "type": "String"
+            }
+          },
+          {
+            "image_data": {
+              "mandatory": "false",
+              "type": "base64"
+            }
+          },
+          {
+            "channel_ids": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          },
+          {
+            "team_ids": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          }
+        ]
+      },
+      {
+        "name": "List Layouts",
+        "description": "You can use this API to fetch the list layouts",
+        "url": "https://cliq.zoho.com/api/v2/users/layout",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": [
+          {
+            "unique_name": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"quick_view | profile_details_android | profile_details_ios | profile_details_web"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fetch list of user teams",
+        "description": "You can use this API to fetch the list of teams that the user belongs to",
+        "url": "https://cliq.zoho.com/api/v2/users/{userid}/teams",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": []
+      }
+    ]
+  },
+  "Userfields": {
+    "apis": [
+      {
+        "name": "Add a userfield",
+        "description": "You can use this API to create a new custom userfield",
+        "url": "https://cliq.zoho.com/api/v2/userfields",
+        "http_method": "POST",
+        "oauth_scope": "ZohoCliq.UserFields.CREATE",
+        "body": [
+          {
+            "name": {
+              "mandatory": "false",
+              "type": "string",
+              "max_length":"30"
+            }
+          },
+          {
+            "type": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"text_field, number, date_picker, drop_down, url"
+            }
+          },
+          {
+            "mandatory": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "encrypted": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "edit_permission": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "options": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Retrieve a particular userfield",
+        "description": "You can use this API to get the details of a particular userfield",
+        "url": "https://cliq.zoho.com/api/v2/userfields/{field-id}",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": []
+      },
+      {
+        "name": "Retrieve all userfields",
+        "description": "You can use this API to get the details of all userfields",
+        "url": "https://cliq.zoho.com/api/v2/userfields",
+        "http_method": "GET",
+        "oauth_scope": "ZohoCliq.Users.READ",
+        "query_params": []
+      },
+      {
+        "name": "Update userfield details",
+        "description": "You can use this API to update the details of a particular userfield",
+        "url": "https://cliq.zoho.com/api/v2/userfields/{field-id}",
+        "http_method": "PUT",
+        "oauth_scope": "ZohoCliq.Userfields.UPDATE",
+        "body": [
+          
+          {
+            "name": {
+              "mandatory": "false",
+              "type": "string",
+              "max_length":"30"
+            }
+          },
+          {
+            "type": {
+              "mandatory": "false",
+              "type": "string",
+              "allowed_values":"text_field, number, date_picker, drop_down, url"
+            }
+          },
+          {
+            "mandatory": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "encrypted": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "edit_permission": {
+              "mandatory": "false",
+              "type": "boolean"
+            }
+          },
+          {
+            "options": {
+              "mandatory": "false",
+              "type": "array"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Delete a userfield",
+        "description": "You can use this API to Delete a Userfield",
+        "url": "https://cliq.zoho.com/api/v2/userfields/{field-id}",
+        "http_method": "DELETE",
+        "oauth_scope": "ZohoCliq.Userfields.DELETE",
+        "query_params": []
+      }
+    ]
+  }
+}
