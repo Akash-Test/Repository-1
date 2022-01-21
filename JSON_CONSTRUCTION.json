@@ -273,7 +273,7 @@
             "fields": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"all|display_name|mobile|department|designation"
+              "allowed_values":"all | display_name | mobile | department | designation"
             }
           },
           {
@@ -467,7 +467,7 @@
             "type": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"text_field, number, date_picker, drop_down, url"
+              "allowed_values":"text_field | number | date_picker | drop_down | url"
             }
           },
           {
@@ -531,7 +531,7 @@
             "type": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"text_field, number, date_picker, drop_down, url"
+              "allowed_values":"text_field | number | date_picker | drop_down | url"
             }
           },
           {
