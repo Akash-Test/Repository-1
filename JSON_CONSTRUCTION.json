@@ -1,5 +1,5 @@
 {
-  "Chats": {
+  "chats": {
     "apis": [
       {
         "name": "Retrieve all direct chats",
@@ -45,7 +45,7 @@
           {
             "fields": {
               "mandatory": "false",
-              "allowed_values": "name | email_id | user_id",
+              "allowed_values": "name|email_id|user_id",
               "type": "string"
             }
           }
@@ -243,7 +243,7 @@
             "fields": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"all | display_name | mobile | department | designation"
+              "allowed_values":"all|display_name|mobile|department|designation"
             }
           }
         ]
@@ -259,21 +259,21 @@
             "status": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"active | inactive | pending | imported_active | imported_inactive"
+              "allowed_values":"active|inactive|pending|imported_active|imported_inactive"
             }
           },
           {
             "plan_type": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"paid | free"
+              "allowed_values":"paid|free"
             }
           },
           {
             "fields": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"all | display_name | mobile | department | designation"
+              "allowed_values":"all|display_name|mobile|department|designation"
             }
           },
           {
@@ -293,7 +293,7 @@
             "sort_by": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"name | usage"
+              "allowed_values":"name|usage"
             }
           },
           {
@@ -432,7 +432,7 @@
             "unique_name": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"quick_view | profile_details_android | profile_details_ios | profile_details_web"
+              "allowed_values":"quick_view|profile_details_android|profile_details_ios|profile_details_web"
             }
           }
         ]
@@ -467,7 +467,7 @@
             "type": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"text_field | number | date_picker | drop_down | url"
+              "allowed_values":"text_field|number|date_picker|drop_down|url"
             }
           },
           {
@@ -531,7 +531,7 @@
             "type": {
               "mandatory": "false",
               "type": "string",
-              "allowed_values":"text_field | number | date_picker | drop_down | url"
+              "allowed_values":"text_field|number|date_picker|drop_down|url"
             }
           },
           {
