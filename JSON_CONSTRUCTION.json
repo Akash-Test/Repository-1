@@ -147,6 +147,12 @@
             }
           },
           {
+            "email_id":{
+              "mandatory": "true",
+              "type": "string"
+            }
+          },
+          {
             "phone": {
               "mandatory": "false",
               "type": "String"
@@ -465,7 +471,7 @@
           },
           {
             "type": {
-              "mandatory": "false",
+              "mandatory": "true",
               "type": "string",
               "allowed_values":"text_field|number|date_picker|drop_down|url"
             }
